@@ -7,7 +7,7 @@ local scriptUrls = {
 local scriptUrl = scriptUrls[game.PlaceId]
 if scriptUrl then
     local success, errorMsg = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Wwwaaallvvvyyy666/fish-it/refs/heads/main/" .. scriptUrl))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Wwwaaallvvvyyy666/Fishit/refs/heads/main/" .. scriptUrl))()
     end)
     if not success then
         warn("[Walvy Community] Failed to load script:", errorMsg)
