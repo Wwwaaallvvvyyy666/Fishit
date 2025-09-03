@@ -2,7 +2,7 @@ local HttpService = game:GetService("HttpService")
 local UserInputService = game:GetService("UserInputService")
 
 -- Config
-local pastebinRaw = ""
+local pastebinRaw = "https://link-center.net/1373842/rYdVBJJjfRdz"
 local getKeyLink = "https://link-center.net/1373842/rYdVBJJjfRdz"
 local backupKey = "WALVY-666VY"
 local keyFileName = "WalvyKeyData.json"
