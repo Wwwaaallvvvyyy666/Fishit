@@ -4,14 +4,30 @@ local scriptUrls = {
     [121864768012064] = "/Getkey"
 }
 
+-- Check if the PlaceId exists in the scriptUrls table
 local scriptUrl = scriptUrls[game.PlaceId]
+
 if scriptUrl then
+    -- Attempt to load and execute the script
     local success, errorMsg = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Wwwaaallvvvyyy666/Fishit/refs/heads/main/" .. scriptUrl))()
+        -- Validate URL construction
+        local baseUrl = "https://raw.githubusercontent.com/Wwwaaallvvvyyy666/Fishit/refs/heads/main"
+        local fullUrl = baseUrl .. scriptUrl
+        local scriptContent = game:HttpGet(fullUrl)
+        
+        -- Validate script content before execution
+        if scriptContent and #scriptContent > 0 then
+            loadstring(scriptContent)()
+        else
+            error("Empty or invalid script content received")
+        end
     end)
+    
     if not success then
-        warn("[Walvy Community] Failed to load script:", errorMsg)
+        warn("[Walvy Community] Failed to load script: " .. tostring(errorMsg))
+    else
+        print("[Walvy Community] Script loaded successfully for PlaceId: " .. game.PlaceId)
     end
 else
-    print("[Walvy Community] Failed to load script Fish It.")
+    warn("[Walvy Community] No script URL found for PlaceId: " .. game.PlaceId)
 end
