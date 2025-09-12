@@ -64,7 +64,7 @@ end
 
 -- Lewati GUI kalau key sudah valid
 if isKeySaved() then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Wwwaaallvvvyyy666/Fishit/main/roblox", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Wwwaaallvvvyyy666/Fishit/refs/heads/main/roblox", true))()
     return
 end
 
@@ -200,7 +200,7 @@ local function validate(inputKey)
         Status.Text = "✅ Key Valid! ("..getTimeLeft()..") Opening GUI..."
         wait(1)
         ScreenGui:Destroy()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Wwwaaallvvvyyy666/Fishit/main/roblox", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Wwwaaallvvvyyy666/Fishit/refs/heads/main/roblox", true))()
     else
         failedAttempts += 1
         Status.Text = "❌ Invalid Key! Try again..."
